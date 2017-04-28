@@ -1,7 +1,20 @@
 version: '2'
 services:
+  queue:
+    image: redis
   backend:
     build: .
     command: python app.py
+    volumes:
+      - .:/app
     ports:
       - "8000:8000"
+    depends_on:
+      - queue
+  worker:
+    build: .
+    command: rqworker --url redis://queue:6379
+    volumes:
+      - .:/app
+    depends_on:
+      - queue
