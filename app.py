@@ -1,8 +1,17 @@
 from sanic import Sanic
 from sanic.response import text
+from rq import Queue
+from redis import Redis
+import time
 
 
 app = Sanic()
+redis_conn = Redis(host = "queue")
+q = Queue(connection=redis_conn)
+
+
+def sleepear():
+    time.sleep(5)
 
 
 @app.route('/ping')
@@ -12,6 +21,7 @@ async def ping(request):
 
 @app.route('/task', methods=['POST'])
 async def create_task(request):
+    q.enqueue("app.sleepear")
     # Kick of a redis queue task
     return text('runnig', status=201)
 
@@ -19,7 +29,7 @@ async def create_task(request):
 @app.route('/task')
 async def list_tasks(request):
     # list the pending tasks maybe
-    return text('list of taks', status=200)
+    return text(str(q.count), status=200)
 
 
 if __name__ == '__main__':
