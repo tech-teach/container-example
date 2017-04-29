@@ -9,4 +9,4 @@ Install `docker` and `docker-compose` then simply:
 
     docker-compose up
 
-Then you can go to [http://0.0.0.0/ping](http://0.0.0.0/ping).
+Then you can go to [http://0.0.0.0:8000/ping](http://0.0.0.0:8000/ping).
