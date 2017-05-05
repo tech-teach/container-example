@@ -4,7 +4,7 @@ Container Example!
 A simple example of using a container and docker compose with a python
 application.
 
-## Installation
+## Installation steps for Ubuntu
 
 ```
 $ sudo apt-get install linux-image-extra-$(uname -r) linux-image-extra-virtual
@@ -21,8 +21,6 @@ $ sudo gpasswd -a $USER docker
 $ sudo service docker restart
 $ newgrp docker
 ```
-
-
 
 ## Run
 
