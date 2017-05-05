@@ -4,7 +4,8 @@ Container Example!
 A simple example of using a container and docker compose with a python
 application.
 
-##Installation
+## Installation
+
 ```
 $ sudo apt-get install linux-image-extra-$(uname -r) linux-image-extra-virtual
 
