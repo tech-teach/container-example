@@ -28,14 +28,14 @@ $ newgrp docker
 To execute docker compose follow the following steps
 
 1. Define your app's environment with a Dockerfile so it can be reproduced anywhere.
-2. In a file `docker-compose.yml` describe the specification of its different containers with their respective properties.
+2. In a file `docker-compose.yml` describes the specification of its different containers with their respective properties.
 3. Run `docker-compose up --build` and Build will start and run the images of all containers.
-4. Finally, run docker compose-up to run your entire application.
+4. Finally, run `docker compose-up` to run your entire application.
 
+## TL;DR;
 
 Install `docker` and `docker-compose` then simply:
 
     docker-compose up
 
-Then you can go to [http://0.0.0.0/ping](http://0.0.0.0/ping).
-
+Then you can go to [http://0.0.0.0:8000/ping](http://0.0.0.0:8000/ping).
